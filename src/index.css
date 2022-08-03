@@ -1,13 +1,288 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@1,700&display=swap');
+*{
+  font-family: 'Finlandica', sans-serif;
   margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+  /* color: #B3C2CE; */
+}
+
+body {
+  
+  background-image: url(https://i.pinimg.com/originals/a0/a0/16/a0a01608a0386ad052a15a5af8196be7.png);
+  /* background-image: url(https://wallpaperaccess.com/full/2122578.jpg); */
+  /* background-image: url(https://c4.wallpaperflare.com/wallpaper/88/769/281/1920x1080-px-digital-art-japan-minimalism-simple-background-sun-trees-video-games-star-wars-hd-art-wallpaper-preview.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; 
+  width: 100vw;
+  height:100vh;
+  /* background-color: rgb(36, 23, 23);
+  background-color: #0C6178;
+  background: #4B494C;
+  background-color: rgb(53, 53, 53);*/
+  /* background-color: #dad5d557;  */
+  background-color: rgba(0, 0, 0, .4);
+  background-blend-mode: multiply;
+}
+#root{width: 100%;height: 100%;}
+@media only screen and (max-width: 600px) {
+  body {
+    width: 200vw;
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
+  
+  .holder{
+    padding: 0.25rem; 
+    bottom: 0;
+    right: 0;
+    width: 50vw;
+    display: flex; 
+    height: 3rem; 
+    box-sizing: border-box; 
+    backdrop-filter: blur(10px);
+    margin-bottom: 1rem; 
+  }
+  
+}
+.heading{
+  color: #B3C2CE;
+}
+
+.error{
+  color: red;
+  font-weight: bolder;
+  border: 1px solid red;
+  padding: 1rem;
+}
+
+.not-allowed{
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.full{
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem;
+}
+.title{
+  font-weight: bolder;
+}
+.medium{
+  width: 50vw;
+  height: 50vh;
+  padding: 1rem;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.singin{
+  /* padding-top: 2rem;  
+  padding-left: 7rem; */
+  align-items: center;
+  width: 50%;
+  box-shadow: rgba( 0, 0, 0.24) 0px 3px 8px;  
+  margin: auto;
+  height: 60vh;
+
+}
+
+.singin input,
+.singin button,
+.singin input:focus,
+.singin button:focus
+{
+  padding: .5rem;
+  color: #B3C2CE;
+  font-size: 1.1rem;
+  font-weight: bold;
+  background-color: rgb(36, 23, 23);
+  border: none;
+  border-radius: 1rem;
+  width: 60%;
+  text-align: center;
+}
+
+.singin button{ margin-left: 10px;}
+.singin button:hover{ 
+  background-color: rgb(36, 23, 23,.3);
+  -webkit-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
+  color: #fff;
+  cursor: pointer;
+}
+
+.title{
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;  
+}
+
+.title h1{
+  align-self: baseline;
+  font-size: 3rem;
+}
+
+.linker{
+  color:rgb(15, 15, 5);
+  text-decoration:none;
+}
+
+/* Popup style */
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  position: relative;
+  width: 20%;
+  margin: 0 auto;
+  height: 200px;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background-color: #4B494C;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.options{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.options button{
+  width: 90%;
+  margin: 1rem 0;
+  padding: .3rem;
+  color: black;
+  background-color: #4B494C;
+  border: none;
+  cursor: pointer;
+}
+
+.close-icon {
+  content: 'x';
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
+
+.chatRoom{
+  display: flex;
+  justify-content: space-between;
+  /* background-color: rgba(0, 0, 0, .3); */
+  color: #B3C2CE;
+  height: 84vh;
+  
+}
+
+.sidebar{
+  flex-basis: 35%;
+  position: relative;
+  overflow-y: scroll;
+}
+.sidebar::-webkit-scrollbar{display: none;}
+.sidebar nav{
+  display: flex;
+  justify-content: space-around;
+  padding: .3rem;
+}
+
+.toggle{
+  padding: .3rem;
+  color: #B3C2CE;
+  background-color: #4B494C;
+  border: none;
+  cursor: pointer; 
+}
+
+.room{
+  flex-basis: 53%;
+  overflow-y: scroll;
+  height: 80%;
+}
+
+.ids{
+  width: 50%;
+  margin-left: 1rem;
+  margin-top: 1rem ;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+.msg-holder{
+  padding: .5rem;
+  background-color: #333;
+  width: 40%;
+  margin: .5rem;
+  border-radius: 1rem;
+}
+
+.msg-holder h3{
+  margin-left: 1rem;
+}
+
+
+.btm{
+  border: none; 
+  padding: 0 1rem; 
+  border-radius: 2rem; 
+  margin: 0.25rem;
+  /* margin-left: 50%; */
+  width: 100%;
+}
+
+.holder{
+  padding: 0.25rem; 
+  /* margin-top: 50%; */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 50vw;
+  display: flex; 
+  height: 3rem; 
+  box-sizing: border-box; 
+  backdrop-filter: blur(10px);
+  margin-bottom: 1rem; 
+}
+
+.holder button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+ /* margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  -moz-osx-font-smoothing: grayscale; 
+  https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
+  */
